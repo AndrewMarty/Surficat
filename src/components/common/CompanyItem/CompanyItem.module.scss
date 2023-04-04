@@ -1,0 +1,189 @@
+@import '@/styles/_variables.scss';
+.item {
+	width: 100%;
+	border: 1px solid #eaecf1;
+	border-radius: 8px;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 16px;
+	padding: 16px 20px 17px;
+	transition: $transition_fast;
+	&Select {
+		background: rgba(109, 84, 254, 0.03);
+		border-color: $purple;
+	}
+	&__select {
+		cursor: pointer;
+		position: relative;
+		border-radius: 50%;
+		width: 20px;
+		height: 20px;
+		margin-left: 4px;
+		margin-right: 22px;
+		border: 1px solid $purple;
+		transition: $transition_fast;
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 6px;
+			height: 6px;
+			background: $white;
+			border-radius: 50%;
+		}
+	}
+	&__selectActive {
+		background: $purple;
+	}
+	&:hover {
+		cursor: pointer;
+		border-color: $purple;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+	&__inner {
+		display: flex;
+		align-items: center;
+	}
+	&__photo {
+		background: #eaecf1;
+		width: 40px;
+		height: 40px;
+		overflow: hidden;
+		border-radius: 50%;
+		border: 1px solid $border;
+		margin-right: 16px;
+		img {
+			object-fit: cover;
+		}
+	}
+	&__name {
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 20px;
+	}
+	&__subName {
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 20px;
+	}
+	&__selectBtn {
+		display: none;
+	}
+	&__selectBtnActive {
+		background: $purple;
+		color: $white;
+		svg {
+			margin-right: 9px;
+		}
+	}
+	&__buttons {
+		display: flex;
+		column-gap: 12px;
+	}
+	&__button {
+		position: relative;
+		min-width: 40px;
+		max-width: 40px;
+	}
+	&__disable {
+		cursor: auto;
+		svg {
+			path {
+				stroke: #787486;
+			}
+		}
+	}
+	&__icon {
+		flex-shrink: 0;
+		margin-right: 12px;
+	}
+	&__info {
+		padding-top: 12px;
+		color: #787486;
+		display: none;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 20px;
+	}
+	@media ($media_xs2) {
+		background: rgba(245, 245, 246, 0.5);
+		border: 1px solid #eaecf1;
+		border-radius: 8px;
+		flex-wrap: wrap;
+		padding: 12px 11px;
+		margin-bottom: 12px;
+		&__selectBtn {
+			font-family: 'Gilroy';
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-weight: 600;
+			font-size: 14px;
+			line-height: 24px;
+			border: 1.5px solid #eaecf1;
+			border-radius: 4px;
+			flex-grow: 1;
+			margin-right: 10px;
+			transition: $transition_fast;
+			margin-right: 0;
+		}
+		&__info {
+			display: flex;
+		}
+		&__inner {
+			text-align: center;
+			width: 100%;
+			flex-direction: column;
+			margin-bottom: 11px;
+		}
+		&__name {
+			font-size: 14px;
+			line-height: 24px;
+		}
+		&__subName {
+			font-size: 12px;
+			line-height: 20px;
+		}
+		&__buttons {
+			width: 100%;
+			display: flex;
+		}
+		&__select {
+			display: none;
+		}
+		&__photo {
+			width: 32px;
+			height: 32px;
+			margin-right: 0;
+			margin-bottom: 8px;
+		}
+		&__button {
+			max-width: none;
+			padding: 7px 11px 3px;
+			width: 100%;
+			background: $white;
+		}
+		&__items {
+			margin-bottom: 16px;
+		}
+		&__buttonEdit {
+			padding: 7px 8px 3px;
+			width: auto;
+		}
+	}
+}
+.hide {
+	@media ($media_xs2) {
+		display: none;
+	}
+}
+.mob {
+	display: none !important;
+	@media ($media_xs2) {
+		display: flex !important;
+	}
+}

@@ -1,0 +1,23 @@
+@import '@/styles/_variables.scss';
+.sends__filter {
+	margin-bottom: 32px;
+	&__info {
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 28px;
+		text-align: center;
+		color: #232124;
+	}
+	&__link {
+		font-weight: 500;
+		color: #6d54fe;
+	}
+	@media ($media_xs2) {
+		margin-bottom: 24px;
+		&__info {
+			max-width: 255px;
+			font-size: 14px;
+			line-height: 24px;
+		}
+	}
+}

@@ -1,0 +1,13 @@
+@import '@/styles/_variables.scss';
+.title {
+	font-weight: 600;
+	font-size: 40px;
+	line-height: 52px;
+	@media ($media_xs2) {
+		font-size: 32px;
+		line-height: 42px;
+		&__icon {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,178 @@
+@import '@/styles/_variables.scss';
+.field {
+	display: block;
+	position: relative;
+	&:last-child {
+		margin-bottom: 0;
+	}
+	&__inner {
+		position: relative;
+	}
+	&__input {
+		padding: 24px 20px 4px;
+		background: $white;
+		border: 1px solid $border;
+		border-radius: 8px;
+		display: block;
+		width: 100%;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 26px;
+		color: $mainText;
+		vertical-align: bottom;
+		transition: $transition_fast;
+		&:hover {
+			border-color: #232124;
+		}
+		&:focus {
+			border-color: $purple;
+			& + span {
+				color: $purple;
+				font-size: 12px;
+				line-height: 20px;
+				top: 5px;
+			}
+			& + span + .field__icon {
+				path {
+					stroke: $purple;
+				}
+			}
+		}
+	}
+	&__placeholder {
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 26px;
+		color: $mainText;
+	}
+	&__error {
+		color: #ff4d50 !important;
+		outline-color: #ff4d50;
+		&::after {
+			color: #ff4d50 !important;
+		}
+	}
+	&__errorBox {
+		padding-top: 4px;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 20px;
+		color: #ff4d50;
+	}
+	&__fill {
+		span {
+			font-size: 12px;
+			line-height: 20px;
+			top: 5px;
+		}
+	}
+	&__errorInput {
+		border-color: $red;
+		&:hover {
+			border-color: $red;
+		}
+		&:focus {
+			border-color: $red;
+			& + span + .field__icon {
+				path {
+					stroke: $red;
+				}
+			}
+		}
+		& + span + .field__icon {
+			path {
+				stroke: $red;
+			}
+		}
+	}
+	&__placeholder {
+		pointer-events: none;
+		transition: $transition_fast;
+		position: absolute;
+		top: 16px;
+		left: 20px;
+		color: $gray;
+		letter-spacing: 0px;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 26px;
+		&::after {
+			content: ' *';
+			color: $purple;
+		}
+	}
+
+	&__eye {
+		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		right: 19px;
+		transform: translateY(-50%);
+		path {
+			transition: $transition_fast;
+		}
+		&:hover {
+			path {
+				stroke: $purple;
+			}
+		}
+	}
+	&__icon {
+		flex-shrink: 0;
+		cursor: pointer;
+		top: 16px;
+		left: 20px;
+		position: absolute;
+		path {
+			transition: $transition_fast;
+		}
+	}
+	@media ($media_xs2) {
+		&__profile {
+			display: block;
+		}
+		&__hide {
+			display: none;
+		}
+		margin-bottom: 20px;
+		&__icon {
+			left: 16px;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		&__edit {
+			margin-bottom: 9px;
+		}
+		&__eye {
+			right: 15px;
+		}
+
+		&__input {
+			padding: 16px 15px 4px;
+			font-size: 14px;
+			line-height: 24px;
+		}
+		&__placeholder {
+			top: 11px;
+			left: 15px;
+			font-size: 14px;
+			line-height: 24px;
+		}
+	}
+}
+.fieldIcon {
+	input {
+		padding-left: 59px;
+	}
+	span {
+		left: 60px;
+	}
+	@media ($media_xs2) {
+		input {
+			padding-left: 51px;
+		}
+		span {
+			left: 52px;
+		}
+	}
+}

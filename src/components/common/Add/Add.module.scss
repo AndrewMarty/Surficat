@@ -1,0 +1,48 @@
+@import '@/styles/_variables.scss';
+.add {
+	&__add {
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 26px;
+		color: $purple;
+		transition: $transition_fast;
+		&:hover {
+			color: $dark;
+		}
+		svg {
+			path {
+				transition: $transition_fast;
+			}
+		}
+		&:hover svg {
+			path {
+				stroke: $dark;
+			}
+		}
+	}
+	&__plus {
+		margin-right: 8px;
+	}
+	@media ($media_xs2) {
+		&__add {
+			font-weight: 600;
+			padding: 4px;
+			background: $white;
+			border: 1.5px solid $border;
+			border-radius: 4px;
+			color: $mainText;
+			font-size: 14px;
+			line-height: 24px;
+			display: flex;
+			justify-content: center;
+		}
+		&__plus {
+			path {
+				stroke: $mainText;
+			}
+		}
+	}
+}

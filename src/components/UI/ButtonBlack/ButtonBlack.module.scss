@@ -1,0 +1,62 @@
+@import '@/styles/_variables.scss';
+.button {
+	font-family: 'Gilroy';
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 24px;
+	color: $white;
+	padding: 16px;
+	width: 100%;
+	background: $dark;
+	border-radius: 8px;
+	transition: $transition_fast;
+	cursor: pointer;
+	svg {
+		display: block;
+	}
+	&:hover {
+		background: #6d54fe;
+	}
+	&:active {
+		background: #6954e4;
+	}
+	&:disabled {
+		cursor: auto;
+		border: 1px solid $border;
+		color: $gray;
+		background: #f5f5f6;
+		svg {
+			path {
+				stroke: $gray;
+			}
+		}
+	}
+	@media ($media_xs2) {
+		padding: 12px 0;
+	}
+}
+.medium {
+	height: 48px;
+	border-radius: 6px;
+	@media ($media_xs2) {
+		font-size: 14px;
+		line-height: 24px;
+		height: 40px;
+	}
+}
+.small {
+	border-radius: 4px;
+	height: 40px;
+	padding: 0 5px;
+	font-size: 14px;
+}
+.xs {
+	height: 32px;
+	border-radius: 4px;
+	padding: 0 5px;
+	font-size: 14px;
+}
